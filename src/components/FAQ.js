@@ -1,19 +1,17 @@
-import { useState } from "react";
 import { BsArrowDown, BsArrowUp } from "react-icons/bs";
 
-const FAQ = ({ heading, description }) => {
-  const [toggle, setToggle] = useState(false);
+const FAQ = ({ item, index, isActive, handleToggle }) => {
   return (
     <article className="article-container">
       <div className="article-top">
-        <h4>{heading}</h4>{" "}
+        <h4>{item.heading}</h4>{" "}
         <div className="">
-          <button onClick={() => setToggle(!toggle)}>
-            {toggle ? <BsArrowUp /> : <BsArrowDown />}
+          <button onClick={() => handleToggle(index)}>
+            {isActive ? <BsArrowUp /> : <BsArrowDown />}
           </button>
         </div>
       </div>
-      {toggle && <p>{description}</p>}
+      {isActive && <p>{item.description}</p>}
     </article>
   );
 };
