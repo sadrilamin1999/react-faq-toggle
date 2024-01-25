@@ -5,7 +5,7 @@ import { useState } from "react";
 const FAQS = () => {
   const data = faqsData;
 
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleToggle = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
